@@ -12,6 +12,10 @@ import Compras from './page/compras';
 import CatalogoWeb from './page/Catalogoweb';
 import Ofertas from './page/Ofertas';
 
+// Nuevas páginas
+import Buscar from './page/Buscar';
+import DetalleProducto from './page/DetalleProducto';
+
 function App() {
 
     // Inventario general de la tienda
@@ -163,6 +167,35 @@ function App() {
                                     agregarAlCarrito={agregarAlCarrito}
                                 />
                             }
+                        />
+
+                        {/* Página de búsqueda */}
+                        <Route
+                            path="/buscar"
+                            element={
+                                <Buscar
+                                    productos={productos}
+                                    setProductos={setProductos}
+                                    agregarAlCarrito={agregarAlCarrito}
+                                />
+                            }
+                        />
+
+                        {/* Detalle del producto */}
+                        <Route
+                            path="/producto/:id"
+                            element={
+                                <DetalleProducto
+                                    productos={productos}
+                                    agregarAlCarrito={agregarAlCarrito}
+                                />
+                            }
+                        />
+
+                        {/* Ruta para páginas inexistentes */}
+                        <Route
+                            path="*"
+                            element={<Navigate to="/inicio" />}
                         />
 
                     </Routes>

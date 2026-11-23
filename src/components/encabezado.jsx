@@ -41,6 +41,13 @@ function Encabezado({ titulo }) {
                             </Link>
                         </li>
 
+                        {/* Nueva opción de búsqueda */}
+                        <li className="nav-item">
+                            <Link className="nav-link fw-bold text-primary" to="/buscar">
+                                Buscar
+                            </Link>
+                        </li>
+
                         <li className="nav-item">
                             <Link className="nav-link" to="/contactos">
                                 Contactos
@@ -58,8 +65,9 @@ function Encabezado({ titulo }) {
                                 Catalogo Web
                             </Link>
                         </li>
+
                         <li className="nav-item">
-                            <Link className="nav-link" to="/Ofertas">
+                            <Link className="nav-link" to="/ofertas">
                                 Ofertas
                             </Link>
                         </li>

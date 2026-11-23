@@ -1,5 +1,6 @@
 
 import { useState } from "react";
+import { Link } from "react-router-dom";
 
 function CardProducto({ producto, agregarAlCarrito }) {
 
@@ -86,12 +87,25 @@ function CardProducto({ producto, agregarAlCarrito }) {
                 </button>
 
                 <button
-                    className="btn btn-warning w-100"
+                    className="btn btn-warning w-100 mb-2"
                     onClick={agregarProducto}
                     disabled={producto.stock <= 0}
                 >
                     Comprar Ahora
                 </button>
+
+                {/* Ir al detalle del producto */}
+                {typeof producto.id === "number" ||
+                 String(producto.id).startsWith("api-") ? (
+
+                    <Link
+                        to={`/producto/${producto.id}`}
+                        className="btn btn-outline-dark w-100"
+                    >
+                        Ver Detalle
+                    </Link>
+
+                ) : null}
 
                 <label className="form-label fw-bold mt-3">
                     Descuento (%)
